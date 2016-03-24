@@ -4,6 +4,7 @@
 
 #### Do something for the gamers who once play the same game with u is a coooool thing, isn't it?
 
+<a href="http://js.ntwikis.com/jsp/apps/cancollezh/tool/expedition_caculator.jsp">View the tool here →</a>
 -------
 
 #### At first, I'm going to write a little SPA base on bootstrap. Then I find the data-bank.
