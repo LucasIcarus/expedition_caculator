@@ -249,7 +249,7 @@ $(document).ready(function () {
         result[1] += day_num *(allo * 24 * 60 + card * 500);
         result[2] += day_num *(allo * 24 * 60 + card * 500);
         result[3] += day_num *(allo * 24 * 20 + card * 500);
-        result[5] += card * day_num;
+        result[6] += card * day_num;
 
         //远征
         for (var i = 0,len = picked_num.length; i < len; i++) {
