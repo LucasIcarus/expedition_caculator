@@ -5,13 +5,13 @@
 
 
 $(document).ready(function () {
-    var picked_num = [],
-        result = [0, 0, 0, 0, 0, 0, 0, 0],
+    var picked_num = [],    // 拿到远征列表
+        result = [0, 0, 0, 0, 0, 0, 0, 0],  // 初始化结果
         chapter_selection_buttons = $('div.ui-field-contain:eq(0) label'),
         display_zone = $('div.ui-field-contain:eq(1) fieldset');
 
 
-
+    // 返回远征对象
     (function () {
         function Expedition(chapter, code, name, fule, ammunition, steel, aluminum, experience, grade, number, require,
                             time, reward, probability) {
@@ -32,7 +32,9 @@ $(document).ready(function () {
         }
 
         Expedition.prototype = {
+
             constructor: Expedition,
+
             getRewardName: function () {
                 switch (this.reward) {
                     case 0:
@@ -47,9 +49,11 @@ $(document).ready(function () {
                         return "装备蓝图";
                 }
             },
+
             getExpect: function () {
                 return this.probabilty[1] + 2 * this.probabilty[2];
             },
+
             getGreatExpect: function () {
                 if (this.probabilty[2] !== 0) {
                     return 2;
@@ -90,8 +94,9 @@ $(document).ready(function () {
         ExpeditionAll.push(e_1_1, e_1_2, e_1_3, e_1_4, e_2_1, e_2_2, e_2_3, e_2_4, e_3_1, e_3_2,
             e_3_3, e_3_4, e_4_1, e_4_2, e_4_3, e_4_4, e_5_1, e_5_2, e_5_3, e_5_4, e_6_1, e_6_2,
             e_6_3, e_6_4);
+
         window.ExpeditionAll = ExpeditionAll;
-    })();
+    }());
 
     function setDisplayLogic() {
         chapter_selection_buttons.on("click", function () {
@@ -115,7 +120,6 @@ $(document).ready(function () {
             td.eq(6).text(exp.steel);
             td.eq(7).text(exp.aluminum);
             td.eq(8).text(exp.getRewardName());
-
         }
     }
 
@@ -284,12 +288,11 @@ $(document).ready(function () {
         resultDisplay();
     }
 
-
     setDisplayLogic();
     setSelectionLogic();
     deleteLogic();
     $('#confirm').on("click", function (event) {
         event.preventDefault();
         calculate();
-    })
+    });
 });
